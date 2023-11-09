@@ -43,6 +43,7 @@ model cli_clientes {
   cli_entrada DateTime?     @default(now()) @db.Timestamp(6)
   cli_saida   DateTime?     @db.Timestamp(6)
   cli_status  String        @default("atv") @db.Char(3)
+  cli_status_pg  String        @default("NF") @db.Char(3)
   ped_pedidos ped_pedidos[]
   mes_mesa    mes_mesa       @relation(fields: [mes_id], references: [mes_id], onDelete: NoAction, map: "cli_fk_mes_id")
 }
